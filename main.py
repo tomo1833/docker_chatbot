@@ -6,23 +6,19 @@ class User:
     ユーザクラス
     """
 
-    def __init__(self, name):
+    def __init__(self):
         """
-        Userオブジェクトの名前をnameに格納
-        @param name
+        Userオブジェクト
         """
-        self.name = name
-        self.responder = Responder("response name")
+        self.responder = Responder()
 
     def get_response(self, inputs):
         """
         応答オブジェクトから応答文字列を返却する
-        @param name
+
+        @param inputs
         戻り値 応答文字列
         """
-
-        # for x in inspect.getmembers(self.responder, inspect.ismethod):
-        #    print(x[0])
 
         return self.responder.response(inputs)
 
@@ -32,13 +28,10 @@ class Responder:
     応答クラス
     """
 
-    def __init__(self, name):
+    def __init__(self):
         """
-        Responseオブジェクトの名前をnameに格納
-
-        @param name
+        Responseオブジェクト
         """
-        self.name = name
 
     def response(self, inputs):
         """
@@ -55,7 +48,7 @@ if __name__ == "__main__":
 
     print("BOT SYSTEM : BOTTER")
 
-    user = User("user name")
+    user = User()
 
     while True:
         inputs = input(" > ").rstrip()
